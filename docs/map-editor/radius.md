@@ -3,11 +3,11 @@ title: Displaying sharp turnings
 description: Learn how to display the sharp turnings in a map.
 ---
   
-# Identify all the sharp turnings in the map
-  
+# Displaying sharp turnings
+
 The Turning Radius tool allows you to identify the turnings of a defined radius in a map.
 
-## 1. Displaying turnings of a defined radius
+## Displaying turnings of a defined radius
 To display turnings of a defined radius:
 
 1. In the tools bar, click on the **Turning Radius Tool** icon ![Turning radius](images/radius.svg){ width="20" height="20" }.  

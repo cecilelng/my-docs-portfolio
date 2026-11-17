@@ -3,11 +3,11 @@ title: Measuring distances and slopes
 description: Learn how to measure distances between two points in the sensor map.
 ---
   
-# Measuring any distances and slopes between two points.
+# Measuring distances and slopes
   
 The Measuring tool allows you to measure distances (x, y, z) and the associated slope between two points of the sensor map.
 
-## Measuring a distance between two points
+## Measuring any distances and slopes between two points
 
 To measure a distance between two points of the sensor map:
 
