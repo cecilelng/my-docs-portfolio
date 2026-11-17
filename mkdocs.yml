@@ -28,3 +28,6 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Tea guide: tea.md
+  - Map Editor: 
+      - Displaying sharp turnings: map-editor/radius.md
+      - Measuring distances: map-editor/measure.md 
