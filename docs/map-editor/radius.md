@@ -3,8 +3,8 @@ title: Displaying sharp turnings
 description: Learn how to display the sharp turnings in a map.
 ---
   
-# Identify all the sharp turnings in the map
-  
+# Displaying sharp turnings
+
 The Turning Radius tool allows you to identify the turnings of a defined radius in a map.
 
 ## Displaying turnings of a defined radius
