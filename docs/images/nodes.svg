@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
+  <title>map_editor_draw_node_1</title>
+  <g>
+    <rect width="22" height="22" rx="2" ry="2" style="fill: #666"/>
+    <line x1="7.5" y1="7.5" x2="14.5" y2="14.5" style="fill: #ccc;stroke: #fff;stroke-linecap: square;stroke-miterlimit: 10"/>
+    <path d="M5.5,4A1.5,1.5,0,1,1,4,5.5,1.5,1.5,0,0,1,5.5,4m0-1A2.5,2.5,0,1,0,8,5.5,2.5,2.5,0,0,0,5.5,3Z" style="fill: #fff"/>
+    <path d="M16.5,15A1.5,1.5,0,1,1,15,16.5,1.5,1.5,0,0,1,16.5,15m0-1A2.5,2.5,0,1,0,19,16.5,2.5,2.5,0,0,0,16.5,14Z" style="fill: #fff"/>
+  </g>
+</svg>

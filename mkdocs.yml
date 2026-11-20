@@ -1,4 +1,4 @@
-site_name: My Docs Portfolio
+site_name: Map Editor Documentation
 site_url: https://cecilelng.github.io/my-docs-portfolio/
 theme:
   name: material
@@ -12,6 +12,7 @@ theme:
         icon: material/weather-sunny
         name: Switch to light mode
   features:
+    - navigation.sections
     - navigation.top
     - search.suggest
     - content.code.copy
@@ -22,12 +23,31 @@ markdown_extensions:
   - tables
   - toc:
       permalink: true
-  - pymdownx.tasklist:
-      custom_checkbox: true
-  - pymdownx.superfences
 nav:
   - Home: index.md
-  - Tea guide: tea.md
-  - Map Editor: 
-      - Displaying sharp turnings: map-editor/radius.md
-      - Measuring distances: map-editor/measure.md 
+  - Getting Started:
+      - Navigating the Map Editor: getting-started/navigating.md
+      - Understanding Icons: getting-started/icons.md
+      - Using Shortcuts: getting-started/shortcuts.md
+      - Tips to save battery: getting-started/battery.md
+  - Creating HD Maps:
+      - HD Maps behaviors: hd-maps/behaviors.md
+      - Selecting elements: hd-maps/selection.md
+      - Creating nodes: hd-maps/nodes.md
+      - Creating edges: hd-maps/edges.md
+      - Creating a terminal: hd-maps/terminal.md
+      - Creating traffic signs: hd-maps/signs.md
+      - Creating a pedestrian area: hd-maps/pedestrian.md
+      - Defining turn signals: hd-maps/turn.md
+      - Defining a desired speed: hd-maps/speed.md
+      - Identifying a region of interest: hd-maps/region.md
+      - Measuring distances: hd-maps/measure.md
+      - Testing the size of a vehicle: hd-maps/volume.md
+      - Displaying sharp turnings: hd-maps/radius.md
+  - Using Sensor Maps:
+      - Selecting scans: sensor-maps/selectingscans.md
+      - Selecting points: sensor-maps/selectingpoints.md
+      - Selecting cuboids: sensor-maps/selectingcuboid.md
+      - Selecting clusters: sensor-maps/selectingclusters.md
+      - Saving LiDAR maps: sensor-maps/savinglidar.md
+  - Changelog: changelog.md

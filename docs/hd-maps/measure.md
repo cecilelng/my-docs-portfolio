@@ -11,7 +11,7 @@ The Measuring tool allows you to measure distances (x, y, z) and the associated 
 
 To measure a distance between two points of the sensor map:
 
-1. In the tools bar, click on the **Measure tool** icon ![Measure tool](images/measure.svg){ width="20" height="20" }.   
+1. In the tools bar, click on the **Measure tool** icon ![Measure tool](../images/measure.svg){ width="20" height="20" }.   
     An orange point hovers with the pointer in the map window.
 2. Place a point on each end of the distance you want to measure.
 

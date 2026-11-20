@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
+  <title>map_editor_draw_yield_1</title>
+  <g>
+    <rect width="22" height="22" rx="2" ry="2" style="fill: #666"/>
+    <rect x="10" y="15" width="2" height="4" style="fill: #fff"/>
+    <polygon points="3.5 3.5 18.5 3.5 11 16 3.5 3.5" style="fill: gray;stroke: #fff;stroke-linecap: round;stroke-linejoin: round"/>
+  </g>
+</svg>
