@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
+  <title>map_editor_draw_pedestrian_1</title>
+  <g>
+    <rect width="22" height="22" rx="2" ry="2" style="fill: #666"/>
+    <g>
+      <circle cx="12" cy="5" r="1" style="fill: #fff"/>
+      <polyline points="7.5 9.5 8.5 7.5 10.5 6.5 11.5 7.5 12.5 9.5 14.5 10.5" style="fill: none;stroke: #fff;stroke-linecap: round;stroke-linejoin: round"/>
+      <polygon points="9.5 11.5 10.5 6.5 11.5 7.5 10.5 11.5 9.5 11.5" style="fill: #fff;stroke: #fff;stroke-linecap: round;stroke-linejoin: round"/>
+      <polyline points="12.5 17.5 12.5 14.5 10.5 11.5 9.5 11.5 8.5 14.5 6.5 17.5" style="fill: none;stroke: #fff;stroke-linecap: round;stroke-linejoin: round"/>
+    </g>
+  </g>
+</svg>

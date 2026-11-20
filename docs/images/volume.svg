@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
+  <title>map_editor_tool_volume_1</title>
+  <g>
+    <rect width="22" height="22" rx="2" style="fill: #666"/>
+    <rect x="9.5" y="7.5" width="5" height="7" style="fill: none;stroke: #fff;stroke-miterlimit: 10"/>
+    <path d="M4.5,3.5a14.57,14.57,0,0,1,2,7.5,14.57,14.57,0,0,1-2,7.5" style="fill: none;stroke: #fff;stroke-linecap: round;stroke-miterlimit: 10"/>
+    <path d="M15.5,3.5a14.57,14.57,0,0,1,2,7.5,14.57,14.57,0,0,1-2,7.5" style="fill: none;stroke: #fff;stroke-linecap: round;stroke-miterlimit: 10"/>
+  </g>
+</svg>

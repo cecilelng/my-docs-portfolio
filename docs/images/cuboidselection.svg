@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
+  <title>map_editor_selection_parallelepiped_1</title>
+  <g>
+    <rect width="22" height="22" rx="2" ry="2" style="fill: #666"/>
+    <g>
+      <rect x="3.5" y="5.5" width="15" height="11" style="fill: #ccc"/>
+      <path d="M18,6V16H4V6H18m1-1H3V17H19V5Z" style="fill: #fff"/>
+    </g>
+  </g>
+</svg>

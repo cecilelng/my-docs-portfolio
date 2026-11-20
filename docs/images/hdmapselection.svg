@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
+  <title>map_editor_selection_element_1</title>
+  <g>
+    <rect width="22" height="22" rx="2" ry="2" style="fill: #666"/>
+    <g>
+      <circle cx="9.5" cy="8.5" r="4" style="fill: #ccc"/>
+      <path d="M9.5,5A3.5,3.5,0,1,1,6,8.5,3.5,3.5,0,0,1,9.5,5m0-1A4.5,4.5,0,1,0,14,8.5,4.51,4.51,0,0,0,9.5,4Z" style="fill: #fff"/>
+    </g>
+    <polygon points="16.5 15.5 9.5 8.5 9.5 18.5 13.5 18.5 16.5 15.5" style="fill: #fff;stroke: #000;stroke-miterlimit: 10"/>
+  </g>
+</svg>

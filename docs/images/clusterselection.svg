@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
+  <title>map_editor_selection_cluster_1</title>
+  <g>
+    <rect width="22" height="22" rx="2" ry="2" style="fill: #666"/>
+    <g>
+      <rect x="3.5" y="6.5" width="9" height="9" style="fill: gray"/>
+      <path d="M12,7v8H4V7h8m1-1H3V16H13V6Z" style="fill: #fff"/>
+    </g>
+    <g>
+      <circle cx="14" cy="8" r="4.5" style="fill: gray"/>
+      <path d="M14,4a4,4,0,1,1-4,4,4,4,0,0,1,4-4m0-1a5,5,0,1,0,5,5,5,5,0,0,0-5-5Z" style="fill: #fff"/>
+    </g>
+    <g>
+      <polygon points="7.15 18.5 12.5 8.98 17.85 18.5 7.15 18.5" style="fill: gray"/>
+      <path d="M12.5,10l2.25,4L17,18H8l2.25-4,2.25-4m0-2-.87,1.55-2.25,4-2.25,4L6.29,19H18.71l-.84-1.49-2.25-4-2.25-4L12.5,8Z" style="fill: #fff"/>
+    </g>
+  </g>
+</svg>

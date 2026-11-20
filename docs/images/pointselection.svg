@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
+  <title>map_editor_selection_point_1</title>
+  <g>
+    <rect width="22" height="22" rx="2" ry="2" style="fill: #666"/>
+    <circle cx="11" cy="11" r="2" style="fill: #fff"/>
+    <line x1="4.5" y1="4.5" x2="7.5" y2="7.5" style="fill: none;stroke: #fff;stroke-linecap: round;stroke-linejoin: round"/>
+    <line x1="14.5" y1="14.5" x2="17.5" y2="17.5" style="fill: none;stroke: #fff;stroke-linecap: round;stroke-linejoin: round"/>
+    <line x1="4.5" y1="17.5" x2="7.5" y2="14.5" style="fill: none;stroke: #fff;stroke-linecap: round;stroke-linejoin: round"/>
+    <line x1="14.5" y1="7.5" x2="17.5" y2="4.5" style="fill: none;stroke: #fff;stroke-linecap: round;stroke-linejoin: round"/>
+  </g>
+</svg>
