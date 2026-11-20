@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
+  <title>map_editor_draw_traffic_light_1</title>
+  <g>
+    <rect width="22" height="22" rx="2" ry="2" style="fill: #666"/>
+    <polygon points="14 4 17 4 14 7 14 4" style="fill: #fff"/>
+    <polygon points="14 9 17 9 14 12 14 9" style="fill: #fff"/>
+    <path d="M8,3V19h6V3Zm3,15a2,2,0,1,1,2-2A2,2,0,0,1,11,18Zm0-5a2,2,0,1,1,2-2A2,2,0,0,1,11,13Z" style="fill: #fff"/>
+    <polygon points="14 14 17 14 14 17 14 14" style="fill: #fff"/>
+    <polygon points="8 4 5 4 8 7 8 4" style="fill: #fff"/>
+    <polygon points="8 9 5 9 8 12 8 9" style="fill: #fff"/>
+    <polygon points="8 14 5 14 8 17 8 14" style="fill: #fff"/>
+    <circle cx="11" cy="6" r="2" style="fill: gray"/>
+  </g>
+</svg>

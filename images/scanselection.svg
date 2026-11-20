@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
+  <title>map_editor_selection_scan_1</title>
+  <g>
+    <rect width="22" height="22" rx="2" ry="2" style="fill: #666"/>
+    <path d="M10,4.8v8.65l-6,3.8V8.55L10,4.8M11,3,3,8V19.06L11,14V3Z" style="fill: #fff"/>
+    <g>
+      <polygon points="7.5 8.28 14.5 3.9 14.5 6.4 11.5 8.28 11.5 15.62 7.5 18.15 7.5 8.28" style="fill: #ccc"/>
+      <path d="M14,4.8V6.12L11.47,7.71,11,8v7.35l-3,1.9V8.55L14,4.8M15,3,7,8V19.06l5-3.16V8.55l3-1.87V3Z" style="fill: #fff"/>
+    </g>
+    <path d="M18,4.8v8.65l-6,3.8V8.55L18,4.8M19,3,11,8V19.06L19,14V3Z" style="fill: #fff"/>
+  </g>
+</svg>

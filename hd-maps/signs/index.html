@@ -1,0 +1,1862 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Learn how to create traffic signs and define their behaviors.">
+      
+      
+      
+        <link rel="canonical" href="https://cecilelng.github.io/my-docs-portfolio/hd-maps/signs/">
+      
+      
+        <link rel="prev" href="../terminal/">
+      
+      
+        <link rel="next" href="../pedestrian/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
+    
+    
+      
+        <title>Creating traffic signs - Map Editor Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#creating-traffic-signs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Map Editor Documentation" class="md-header__button md-logo" aria-label="Map Editor Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Map Editor Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Creating traffic signs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Map Editor Documentation" class="md-nav__button md-logo" aria-label="Map Editor Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Map Editor Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/navigating/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Navigating the Map Editor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/icons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Understanding Icons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/shortcuts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using Shortcuts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/battery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tips to save battery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creating HD Maps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Creating HD Maps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../behaviors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HD Maps behaviors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../selection/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Selecting elements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creating nodes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../edges/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creating edges
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terminal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creating a terminal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creating traffic signs
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creating traffic signs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#stop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stop sign
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stop sign">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#about-stop-signs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        About Stop signs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-stop-sign" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating a stop sign
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stopbehavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Defining behaviors and priorities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-stop-lanes-and-priority-areas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deleting stop lanes and priority areas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yield" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Yield sign
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Yield sign">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-yield-sign" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating a yield sign
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defining-behaviors-and-priorities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Defining behaviors and priorities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-stop-lanes-and-priority-areas_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deleting stop lanes and priority areas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#light" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Traffic light
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Traffic light">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#about-traffic-lights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        About traffic lights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-traffic-light" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating a traffic light
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defining-behaviors-and-priorities_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Defining behaviors and priorities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-stop-lanes-and-priority-areas_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deleting stop lanes and priority areas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defining-the-v2x-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Defining the V2X settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating a virtual sign
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pedestrian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Creating a pedestrian area
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../turn/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Defining turn signals
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../speed/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Defining a desired speed
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../region/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Identifying a region of interest
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../measure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Measuring distances
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../volume/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing the size of a vehicle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../radius/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Displaying sharp turnings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using Sensor Maps
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Using Sensor Maps
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sensor-maps/selectingscans/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Selecting scans
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sensor-maps/selectingpoints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Selecting points
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sensor-maps/selectingcuboid/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Selecting cuboids
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sensor-maps/selectingclusters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Selecting clusters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sensor-maps/savinglidar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Saving LiDAR maps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#stop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Stop sign
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stop sign">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#about-stop-signs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        About Stop signs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-stop-sign" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating a stop sign
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stopbehavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Defining behaviors and priorities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-stop-lanes-and-priority-areas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deleting stop lanes and priority areas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yield" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Yield sign
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Yield sign">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-yield-sign" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating a yield sign
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defining-behaviors-and-priorities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Defining behaviors and priorities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-stop-lanes-and-priority-areas_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deleting stop lanes and priority areas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#light" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Traffic light
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Traffic light">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#about-traffic-lights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        About traffic lights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creating-a-traffic-light" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating a traffic light
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defining-behaviors-and-priorities_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Defining behaviors and priorities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-stop-lanes-and-priority-areas_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deleting stop lanes and priority areas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defining-the-v2x-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Defining the V2X settings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#virtual" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Creating a virtual sign
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="creating-traffic-signs">Creating traffic signs<a class="headerlink" href="#creating-traffic-signs" title="Permanent link">&para;</a></h1>
+<p>You can place the traffic signs at their actual position in the site. You can also define the behaviors and the priorities at a traffic sign.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Since traffic signs are part of the HD Maps behaviors, it is highly recommended to read the following part: <a href="../behaviors/">HD Maps Behaviors</a> before you start creating traffic signs. After reading this part, you will be able to better understand how HD Maps behaviors work and how to define them according to your needs.</p>
+</div>
+<h2 id="stop">Stop sign<a class="headerlink" href="#stop" title="Permanent link">&para;</a></h2>
+<h3 id="about-stop-signs">About Stop signs<a class="headerlink" href="#about-stop-signs" title="Permanent link">&para;</a></h3>
+<p>The stop sign is defined by the following features:</p>
+<ul>
+<li>the position of the sign</li>
+<li>0 to N stops lanes which correspond to the N stop points where the vehicle should stop.</li>
+<li>1 to M concerned itineraries with their associated priority areas</li>
+</ul>
+<p>A stop sign can have several concerned itineraries. The concerned itinerary corresponds to the mission and defines the priority areas that need to be considered (see Figure A). You can also create a stop sign without an associated concerned itinerary. In this case, the stop sign is always considered.</p>
+<p><img alt="Stop sign" src="../../images/stopsign.png" /></p>
+<p><em>Figure A: A stop sign with a perpendicular priority lane</em></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <a href="#yield"><strong>Yield sign</strong></a> edition is similar to the <strong>Stop sign</strong>. They have the same properties.</p>
+</div>
+<h3 id="creating-a-stop-sign">Creating a stop sign<a class="headerlink" href="#creating-a-stop-sign" title="Permanent link">&para;</a></h3>
+<p>When you create a stop sign, you only create the physical sign and the associated road marking. If you want the vehicle to stop at the stop sign, you need to <a href="#stopbehavior">define the behaviors and priorities</a>.</p>
+<p>To create a stop sign:</p>
+<ol>
+<li>
+<p>In the tools bar, click on the <strong>Stop sign</strong> icon <img alt="stop" src="../../images/stop.svg" />.</p>
+<p><strong>Result:</strong> In 2D mode, a cross hovers with the pointer in the map window. The cross represents the stop sign.</p>
+</li>
+<li>
+<p>Click at the position where you want to place the stop sign.</p>
+<p><strong>Result:</strong> In 2D mode, a square hovers with the pointer in the map window. The square represents one end of the stop road marking.</p>
+</li>
+<li>
+<p>Click to place each end of the stop road marking.</p>
+</li>
+</ol>
+<h3 id="stopbehavior">Defining behaviors and priorities<a class="headerlink" href="#stopbehavior" title="Permanent link">&para;</a></h3>
+<p>The vehicle stops when the front end of the vehicle is at a specific distance from the end of the stop lane. This distance is defined in the configuration file decision.conf. The <strong>parameter planner/stop_distance</strong> allows you to define the distance..</p>
+<p>To define behaviors and priorities:</p>
+<ol>
+<li>
+<p>Select the stop sign you have created.</p>
+</li>
+<li>
+<p>In the <strong>Stop Sign</strong> section of left pane, click on the <strong>+</strong> icon next to the empty <strong>Stop Lanes</strong> field.</p>
+<p><strong>Result:</strong> A white line hovers with the pointer on edges. The white line represents the stop line: the position where the vehicle stops.</p>
+</li>
+<li>
+<p>Click to place the stop line.</p>
+<p><strong>Result:</strong> The lane on which you placed the stop line is identified in the <strong>Stop Lanes</strong> section of the left pane.</p>
+</li>
+<li>
+<p>Click on the icons <strong>-</strong> or <strong>+</strong> to define the <strong>Itinerary Depth</strong>. If you define the <strong>Itinerary Depth</strong> at 1, the current itinerary will take into account the following edge as part of its itinerary. If you define the <strong>Itinerary Depth</strong> at 2, the current itinerary will take into account the two following edges as part of its itinerary and so on.</p>
+</li>
+<li>
+<p><em>(optional)</em> If there is more than one possible itinerary at the stop line, select a path in the <strong>Itineraries</strong> drop-down list.</p>
+<p>Depending on the selected itinerary, you can define a priority area. In other words, you can define that an edge is a priority over another edge.</p>
+</li>
+<li>
+<p><em>(optional)</em> To define a priority area, click on the <strong>+</strong> icon next to the empty <strong>Priority Areas</strong> field then select the priority edge for this itinerary.</p>
+<p><strong>Result:</strong> The selected priority edge is colored in orange. And the selected priority edges are identified in the <strong>Priority Areas</strong> section of the left pane.</p>
+</li>
+</ol>
+<h3 id="deleting-stop-lanes-and-priority-areas">Deleting stop lanes and priority areas<a class="headerlink" href="#deleting-stop-lanes-and-priority-areas" title="Permanent link">&para;</a></h3>
+<p>To delete a stop lane:</p>
+<ol>
+<li>Select the stop sign you have created.</li>
+<li>In the <strong>Stop Sign</strong> section of left pane, select the stop lane you want to delete.</li>
+<li>Click on the <strong>x</strong> icon next to the <strong>Stop Lanes</strong> field.</li>
+</ol>
+<p>You have deleted the stop lane. To delete a priority area, follow the same procedure in the <strong>Priority Areas</strong> field.</p>
+<h2 id="yield">Yield sign<a class="headerlink" href="#yield" title="Permanent link">&para;</a></h2>
+<p>The yield sign edition is similar to the Stop sign. They have the same properties. For more information on yield signs, see <a href="#stop">About stop signs</a>.</p>
+<h3 id="creating-a-yield-sign">Creating a yield sign<a class="headerlink" href="#creating-a-yield-sign" title="Permanent link">&para;</a></h3>
+<p>To create a yield sign:</p>
+<ol>
+<li>
+<p>In the tools bar, click on the <strong>Yield sign</strong> icon <img alt="yield" src="../../images/yield.svg" />.</p>
+<p><strong>Result:</strong> In 2D mode, a cross hovers with the pointer in the map window. The cross represents the yield sign.</p>
+</li>
+<li>
+<p>Click at the position where you want to place the yield sign.</p>
+<p><strong>Result:</strong> In 2D mode, a square hovers with the pointer in the map window. The square represents one end of the yield road marking.</p>
+</li>
+<li>
+<p>Click to place each end of the yield road marking.</p>
+</li>
+</ol>
+<h3 id="defining-behaviors-and-priorities">Defining behaviors and priorities<a class="headerlink" href="#defining-behaviors-and-priorities" title="Permanent link">&para;</a></h3>
+<p>The vehicle stops when the front end of the vehicle is on the yield sign position.</p>
+<p>To define behaviors and priorities:</p>
+<ol>
+<li>
+<p>Select the stop sign you have created.</p>
+</li>
+<li>
+<p>In the <strong>Yield Sign</strong> section of left pane, click on the <strong>+</strong> icon next to the empty <strong>Stop Lanes</strong> field.</p>
+<p><strong>Result:</strong> A white line hovers with the pointer on edges. The white line represents the stop line: the position where the vehicle stops.</p>
+</li>
+<li>
+<p>Click to place the stop line.</p>
+<p><strong>Result:</strong> The lane on which you placed the stop line is identified in the <strong>Stop Lanes</strong> section of the left pane.</p>
+</li>
+<li>
+<p>Click on the icons <strong>-</strong> or <strong>+</strong> to define the <strong>Itinerary Depth</strong>. If you define the <strong>Itinerary Depth</strong> at 1, the current itinerary will take into account the following edge as part of its itinerary. If you define the <strong>Itinerary Depth</strong> at 2, the current itinerary will take into account the two following edges as part of its itinerary and so on.</p>
+</li>
+<li>
+<p><em>(optional)</em> If there is more than one possible itinerary at the stop line, select a path in the <strong>Itineraries</strong> drop-down list.</p>
+<p>Depending on the selected itinerary, you can define a priority area. In other words, you can define that an edge is a priority over another edge.</p>
+</li>
+<li>
+<p><em>(optional)</em> To define a priority area, click on the <strong>+</strong> icon next to the empty <strong>Priority Areas</strong> field then select the priority edge for this itinerary.</p>
+<p><strong>Result:</strong> The selected priority edge is colored in orange. And the selected priority edges are identified in the <strong>Priority Areas</strong> section of the left pane.</p>
+</li>
+</ol>
+<h3 id="deleting-stop-lanes-and-priority-areas_1">Deleting stop lanes and priority areas<a class="headerlink" href="#deleting-stop-lanes-and-priority-areas_1" title="Permanent link">&para;</a></h3>
+<p>To delete a stop lane:</p>
+<ol>
+<li>Select the stop sign you have created.</li>
+<li>In the <strong>Stop Sign</strong> section of left pane, select the stop lane you want to delete.</li>
+<li>Click on the <strong>x</strong> icon next to the <strong>Stop Lanes</strong> field.</li>
+</ol>
+<p>You have deleted the stop lane. To delete a priority area, follow the same procedure in the <strong>Priority Areas</strong> field.</p>
+<h2 id="light">Traffic light<a class="headerlink" href="#light" title="Permanent link">&para;</a></h2>
+<h3 id="about-traffic-lights">About traffic lights<a class="headerlink" href="#about-traffic-lights" title="Permanent link">&para;</a></h3>
+<p>Traffic lights are defined by the following features:</p>
+<ul>
+<li>the position of the traffic light in the map</li>
+<li>0 to N stop lanes which correspond to the N stop points where the vehicle should stop for the traffic light. You can create several affected lanes for one traffic light.</li>
+<li>1 to M concerned itineraries with their associated priority areas</li>
+</ul>
+<p>A stop sign can have several concerned itineraries. The concerned itinerary corresponds to the mission and defines the priority areas that need to be considered (see Figures B and C).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As of Mar 10th, 2020, the assigned priorities are not yet considered for traffic lights.</p>
+</div>
+<p><img alt="one priority" src="../../images/trafficlight1.png" /></p>
+<p><em>Concerned itinerary with one associated priority lane</em></p>
+<p><img alt="two priorities" src="../../images/trafficlight2.png" /></p>
+<p><em>Concerned itinerary with two associated priority lanes</em></p>
+<h3 id="creating-a-traffic-light">Creating a traffic light<a class="headerlink" href="#creating-a-traffic-light" title="Permanent link">&para;</a></h3>
+<p>To create a traffic light:</p>
+<ol>
+<li>
+<p>In the tools bar, click on the <strong>Traffic Light</strong> icon <img alt="trafficlight" src="../../images/trafficlight.svg" />.</p>
+<p><strong>Result:</strong> In 2D mode, a cross hovers with the pointer in the map window. The cross represents the traffic light.</p>
+</li>
+<li>
+<p>Click at the position where you want to place the traffic light.</p>
+<p><strong>Result:</strong> In 2D mode, square hovers with the pointer in the map window. The square represents one end of the traffic light road marking.</p>
+</li>
+<li>
+<p>Click to place each end of the traffic light road marking.</p>
+</li>
+</ol>
+<h3 id="defining-behaviors-and-priorities_1">Defining behaviors and priorities<a class="headerlink" href="#defining-behaviors-and-priorities_1" title="Permanent link">&para;</a></h3>
+<p>The vehicle stops when the front end of the vehicle is at a specific distance from the end of the stop lane. This distance is defined in the configuration file decision.conf. The parameter <strong>planner/stop_distance</strong> allows you to define the distance.</p>
+<p>To define behaviors and priorities:</p>
+<ol>
+<li>
+<p>Select the stop sign you have created.</p>
+</li>
+<li>
+<p>In the <strong>Traffic Light</strong> section of left pane, click on the <strong>+</strong> icon next to the empty <strong>Stop Lanes</strong> field.</p>
+<p><strong>Result:</strong> A white line hovers with the pointer on edges. The white line represents the stop line: the position where the vehicle stops.</p>
+</li>
+<li>
+<p>Click to place the stop line.</p>
+<p><strong>Result:</strong> The lane on which you placed the stop line is identified in the <strong>Stop Lanes</strong> section of the left pane.</p>
+</li>
+<li>
+<p>Click on the icons <strong>-</strong> or <strong>+</strong> to define the <strong>Itinerary Depth</strong>. If you define the <strong>Itinerary Depth</strong> at 1, the current itinerary will take into account the following edge as part of its itinerary. If you define the <strong>Itinerary Depth</strong> at 2, the current itinerary will take into account the two following edges as part of its itinerary and so on.</p>
+</li>
+<li>
+<p><em>(optional)</em> If there is more than one possible itinerary at the stop line, select a path in the <strong>Itineraries</strong> drop-down list.</p>
+<p>Depending on the selected itinerary, you can define a priority area. In other words, you can define that an edge is a priority over another edge.</p>
+</li>
+<li>
+<p><em>(optional)</em> To define a priority area, click on the <strong>+</strong> icon next to the empty <strong>Priority Areas</strong> field then select the priority edge for this itinerary.</p>
+<p><strong>Result:</strong> The selected priority edge is colored in orange. And the selected priority edges are identified in the <strong>Priority Areas</strong> section of the left pane.</p>
+</li>
+</ol>
+<h3 id="deleting-stop-lanes-and-priority-areas_2">Deleting stop lanes and priority areas<a class="headerlink" href="#deleting-stop-lanes-and-priority-areas_2" title="Permanent link">&para;</a></h3>
+<p>To delete a stop lane:</p>
+<ol>
+<li>Select the stop sign you have created.</li>
+<li>In the <strong>Stop Sign</strong> section of left pane, select the stop lane you want to delete.</li>
+<li>Click on the <strong>x</strong> icon next to the <strong>Stop Lanes</strong> field.</li>
+</ol>
+<p>You have deleted the stop lane. To delete a priority area, follow the same procedure in the <strong>Priority Areas</strong> field.</p>
+<h3 id="defining-the-v2x-settings">Defining the V2X settings<a class="headerlink" href="#defining-the-v2x-settings" title="Permanent link">&para;</a></h3>
+<p>To define the V2X settings:</p>
+<ol>
+<li>
+<p>In the <strong>Traffic Light</strong> section of the left pane, check the <strong>V2X</strong> box.</p>
+<p><strong>Result:</strong> The V2X settings appears.</p>
+</li>
+<li>
+<p>In the V2X drop down list, select the appropriate V2X standard.</p>
+</li>
+<li>
+<p>Enter the following parameters:</p>
+<ul>
+<li>Region ID</li>
+<li>Intersection ID</li>
+<li>Traffic light ID</li>
+</ul>
+</li>
+</ol>
+<h2 id="virtual">Creating a virtual sign<a class="headerlink" href="#virtual" title="Permanent link">&para;</a></h2>
+<p>You can use virtual signs to place traffic signs that are not actually on the site. For example, it can be a priority on the right where there is no physical sign. You can create the following virtual traffic signs:</p>
+<ul>
+<li>Stop sign</li>
+<li>Yield sign</li>
+<li>Traffic light</li>
+</ul>
+<p>To create a virtual sign:</p>
+<ol>
+<li>
+<p>In the tools bar, click on the icon of one of the following traffic signs: <strong>Stop</strong>, <strong>Yield</strong> and <strong>Traffic light</strong>.</p>
+</li>
+<li>
+<p>In the <strong>Sign Creator</strong> section at the bottom of the left pane, check the box <strong>Virtual</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can only place virtual signs on edges.</p>
+</div>
+</li>
+<li>
+<p>Click at the position where you want to place the virtual sign. The vehicle stops at the position of the virtual sign.</p>
+</li>
+<li>
+<p>Define behaviors and priorities of the virtual sign. For more information on how to define behaviors and priorities, see the relevant section: Defining behaviors and priorities.</p>
+</li>
+</ol>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "search.suggest", "content.code.copy"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+    
+  </body>
+</html>

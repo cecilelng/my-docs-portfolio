@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
+  <title>map_editor_draw_node_scan_1</title>
+  <g>
+    <rect width="22" height="22" rx="2" ry="2" style="fill: #666"/>
+    <line x1="4.5" y1="4.5" x2="9.5" y2="9.5" style="fill: #ccc;stroke: #fff;stroke-miterlimit: 10"/>
+    <line x1="12.5" y1="12.5" x2="17.5" y2="17.5" style="fill: #ccc;stroke: #fff;stroke-miterlimit: 10"/>
+    <path d="M11,9a2,2,0,1,1-2,2,2,2,0,0,1,2-2m0-1a3,3,0,1,0,3,3,3,3,0,0,0-3-3Z" style="fill: #fff"/>
+  </g>
+</svg>

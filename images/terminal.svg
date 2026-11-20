@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
+  <title>map_editor_draw_terminal_1</title>
+  <g>
+    <rect width="22" height="22" rx="2" ry="2" style="fill: #666"/>
+    <g>
+      <path d="M18,4V8H15V4h3m1-1H14V9h5V3Z" style="fill: #fff"/>
+      <line x1="16.5" y1="12" x2="16.5" y2="9" style="fill: none;stroke: #fff;stroke-miterlimit: 10"/>
+      <line x1="16.5" y1="19" x2="16.5" y2="13" style="fill: none;stroke: #fff;stroke-miterlimit: 10"/>
+      <polygon points="11.5 16.5 11.5 9.5 10.5 8.5 4.5 8.5 3.5 9.5 3.5 16.5 11.5 16.5" style="fill: gray;stroke: #fff;stroke-miterlimit: 10"/>
+      <rect x="4" y="14" width="7" height="2" style="fill: #fff"/>
+      <rect x="4" y="15" width="2" height="1" style="fill: gray"/>
+      <rect x="9" y="15" width="2" height="1" style="fill: gray"/>
+      <line x1="10.5" y1="17" x2="10.5" y2="18" style="fill: none;stroke: #fff;stroke-miterlimit: 10"/>
+      <line x1="4.5" y1="18" x2="4.5" y2="17" style="fill: none;stroke: #fff;stroke-miterlimit: 10"/>
+      <path d="M16.5,12a.5.5,0,1,1-.5.5.5.5,0,0,1,.5-.5m0-1A1.5,1.5,0,1,0,18,12.5,1.5,1.5,0,0,0,16.5,11Z" style="fill: #fff"/>
+    </g>
+  </g>
+</svg>
